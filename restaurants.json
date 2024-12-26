@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Puerto Marina",
+    "cuisine": "Seafood, Mediterranean",
+    "address": "Av. Beethoven, Tangier 90000 Morocco",
+    "phone": "+212 5393-25615",
+    "rating": 5,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFNlAsj77l_UseV5iRnOP4jJDwc--Xjw4LVW21bEoJ0RrA6ncCT5IFJ2f0MqwUAr_sKOY&usqp=CAU",
+    "website": "https://www.puertomarina.ma/"
+  },
+  {
+    "id": 2,
+    "name": "Misushi Tanger",
+    "cuisine": "Sushi, Thaï",
+    "address": "Socco Alto, Tanger (Tanja) 90040 Maroc",
+    "phone": "+212 614-691516",
+    "rating": 4.5,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaKahz9PyQK0W-iR4up-p3QYC5FJYOIN0sg&s",
+    "website": "https://www.misushi.ma/"
+  },
+  {
+    "id": 3,
+    "name": " Anzar Morocco",
+    "cuisine": "Moroccan",
+    "address": "Tanger Marina Bay Parking lot N1, Tangier 90000 Morocco",
+    "phone": "+212 666-172897",
+    "rating": 4.5,
+    "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/e5/05/9e/oriental-fine-dining.jpg?w=1400&h=800&s=1",
+    "website": "https://anzar-morocco.com/"
+  },
+  {
+    "id": 4,
+    "name": "Le Pti Versailles",
+    "cuisine": "Française, Internationale",
+    "address": "Zone Ghandouri, Avenue Las Palmas, Tangier, Morocco",
+    "phone": "+212 80-8651319",
+    "rating": 4,
+    "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/4b/3c/45/venez-vivre-l-essence.jpg?w=1400&h=800&s=1",
+    "website": "https://leptiversailles.com/"
+  },
+  {
+    "id": 5,
+    "name": "La Terrasse Dar El Kasbah",
+    "cuisine": "International, Moroccan",
+    "address": "12 Bis Rue de la Kasbah, Tangier Morocco",
+    "phone": "+212 661-882408",
+    "rating": 4.3,
+    "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/08/f5/78/restaurant.jpg?w=1800&h=1000&s=1",
+    "website": "https://www.dar-kasbah.com/"
+  },
+  {
+    "id": 6,
+    "name": "nommos",
+    "cuisine": "Française, Internationale, ",
+    "address": "Tanger Marina Bay, Tanger (Tanja) 90090 Maroc",
+    "phone": "+212 767-343931",
+    "rating": 4,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMNiry2WUtjMfWI4ti6V46SQ9b4_XjTLkCng&s",
+    "website": "https://nommostanger.com/"
+  },
+  {
+    "id": 8,
+    "name": "La Table du Marché",
+    "cuisine": "International, Mediterranean",
+    "address": "7 Rue du Marche, Tangier, Morocco",
+    "phone": "+212 539 92 71 40",
+    "rating": 4.6,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXwnbKX8rdkvzYSrVLCWCkR-YmsZukIWB8Tw&s",
+    "website": "https://linktr.ee/latabledumarchetanger"
+  },
+  {
+    "id": 9,
+    "name": "Alma Kitchen & Coffee",
+    "cuisine": "Café, Internationale, Méditerranéenne,",
+    "address": "44 , Rue Antaki, Tanger (Tanja) 90000 Maroc",
+    "phone": "+212 689-742207",
+    "rating": 5,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeKjOSBCebQSeZkxfYx9W73IN4NfLxTzGcJQ&s",
+    "website": "https://almatanger.com/"
+  },
+  {
+    "id": 10,
+    "name": "Restaurant Palais Zahia",
+    "cuisine": "Marocaine",
+    "address": "Rue de la Marine N°76 Old Medina, Tanger (Tanja) 90000 Maroc",
+    "phone": "+212 5394-09400",
+    "rating": 4.5,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOpJdDYcKlx48btFcRQbrEHCxTvKCDc827LA&s",
+    "website": "https://www.palais-zahia.com/"
+  }
+]

@@ -1,0 +1,138 @@
+
+ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 135px;
+}
+a {
+    text-decoration: none;
+    color: rgb(251, 247, 247);
+    font-family: 'Arial', sans-serif;
+    padding: 10px 20px;
+}
+
+#video{
+    width: 1220px;
+ 
+}
+#search{
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 1em;
+    margin-right: -40px;
+}
+#button {
+    padding: 5px 10px;
+    font-size: 1em;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    display: inline-block; ;
+    margin-left: -90px;
+}
+header{
+    background-color: black;
+    padding: 10px;
+}
+h2{
+    color: #ffffff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
+
+h1{
+    text-align: center;
+    font-size: 40px;
+}
+#restaurant-list {
+    display: flex;
+    flex-wrap: wrap;  
+    gap: 20px;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+
+.restaurant-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 20px;
+    width: 32%;  
+    max-width: 320px;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.restaurant-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; 
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+
+.restaurant-card h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #333;
+    margin: 10px 0;
+    text-transform: uppercase;
+}
+
+.restaurant-card p {
+    font-size: 1rem;
+    color: #777;
+    margin: 5px 0;
+}
+
+
+.details-button{
+    background-color:  #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+.details-button:hover{
+background-color: #90794A;;
+}
+
+.container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    gap: 20px;
+   
+}
+
+.container img {
+    max-width: 40%; 
+    height: auto; 
+}
+
+.container p {
+    width: 50%; 
+    font-size: 1rem; 
+  
+}
+
+
+
+
+
+
+
+
+
+

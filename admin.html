@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/logoo.png">
+</head>
+<style>
+  
+    img {
+        width: 100px;
+        height: auto;
+    }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#search {
+    padding: 8px;
+    margin: 20px auto;
+    display: block;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+table {
+    width: 15%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #d3c0c0;
+
+}
+
+table th {
+    background-color: #846a6a;
+  
+}
+
+table td {
+    vertical-align: middle;
+ 
+}
+
+
+img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Button Styling */
+button {
+    padding: 8px 15px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Delete Button */
+button.delete {
+    background-color: #f44336;
+}
+
+button.delete:hover {
+    background-color: #d32f2f;
+}
+
+/* Form Styling */
+form {
+    width: 50%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+form button:focus {
+    outline: none;
+}
+
+h2{
+    color: #333;
+    
+}
+h3{
+    text-align: center;
+}
+</style>
+<body>
+    <header>
+        <h1>Restaurant Management - Admin</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Back to Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h2>Restaurant List</h2>
+
+        <!-- Search Bar -->
+        <div>
+            <input type="text" id="search" placeholder="Search for a restaurant..." onkeyup="searchRestaurant()">
+        </div>
+
+        <table id="restaurant-table">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Cuisine</th>
+                    <th>Phone</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="restaurant-list"></tbody>
+        </table>
+
+        <h3>Add a New Restaurant</h3>
+        <form id="add-restaurant-form">
+            <label for="name">Restaurant Name:</label>
+            <input type="text" id="name" required><br><br>
+            <label for="cuisine">Cuisine:</label>
+            <input type="text" id="cuisine" required><br><br>
+            <label for="address">Address:</label>
+            <input type="text" id="address" required><br><br>
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" required><br><br>
+            <label for="rating">Rating (1-5):</label>
+            <input type="number" id="rating" min="1" max="5" required><br><br>
+            <label for="image">Image URL:</label>
+            <input type="text" id="image" required><br><br>
+            <button type="submit">Add</button>
+        </form>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchRestaurants();
+        });
+
+        
+        function fetchRestaurants() {
+            fetch('http://localhost:3002/restaurants')
+                .then(response => response.json())
+                .then(data => {
+                    const restaurantList = document.getElementById('restaurant-list');
+                    restaurantList.innerHTML = ''; 
+
+                    data.forEach(restaurant => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td><img src="${restaurant.img}" alt="${restaurant.name}"></td>
+                            <td>${restaurant.name}</td>
+                            <td>${restaurant.cuisine}</td>
+                            <td>${restaurant.phone}</td>
+                            <td>
+                                <button onclick="deleteRestaurant(${restaurant.id})">Delete</button>
+                               
+                            </td>
+                        `;
+                        restaurantList.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error fetching restaurants:', error));
+        }
+
+    
+        function deleteRestaurant(id) {
+            fetch(`http://localhost:3002/restaurants/${id}`, {
+                method: 'DELETE'
+            })
+            .then(() => {
+                alert('Restaurant deleted');
+                fetchRestaurants();
+            })
+            .catch(error => console.error('Error deleting restaurant:', error));
+        }
+
+       
+
+        document.getElementById('add-restaurant-form').addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent form submission
+
+            const newRestaurant = {
+                name: document.getElementById('name').value,
+                cuisine: document.getElementById('cuisine').value,
+                image: document.getElementById('img').value,
+                address: document.getElementById('address').value,
+                phone: document.getElementById('phone').value,
+                rating: document.getElementById('rating').value
+            };
+
+            fetch('http://localhost:3002/restaurants', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newRestaurant)
+            })
+            .then(() => {
+                alert('New restaurant added');
+                fetchRestaurants(); // Refresh the list
+            })
+            .catch(error => console.error('Error adding restaurant:', error));
+        });
+
+        
+        function searchRestaurant() {
+            const searchQuery = document.getElementById('search').value.toLowerCase();
+            const rows = document.querySelectorAll('#restaurant-list tr');
+
+            rows.forEach(row => {
+                const name = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+                const cuisine = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+
+                if (name.includes(searchQuery) || cuisine.includes(searchQuery)) {
+                    row.style.display = ''; 
+                } else {
+                    row.style.display = 'none'; 
+                }
+            });
+        }
+        
+    </script>
+</body>
+</html>
